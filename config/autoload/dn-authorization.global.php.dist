@@ -1,0 +1,24 @@
+<?php
+
+return [
+    'dn-authorization' => [
+        //The route to redirect on if the user is not authorised
+        "redirect_route" => "user/login",
+        //Whether to redirect unauthorized person to redirect route or not
+        "redirect_unauthorized" => true,
+        //The default role if none is provided by the idendity of Zend\Authentication\AuthenticationService
+        "default_role" => "guest",
+        //Exclusion for authorization
+        "exclusions" => [
+            "controllers" => [
+                "Application\Controller\Projets"
+            ],
+            "routes" => [
+                "admin"
+            ],
+            "modules" => [
+                "ModuleName"
+            ]
+        ]
+    ],
+];
